@@ -1,0 +1,11 @@
+
+db:
+  conn: "mongodb://hotel_admin:"
+  shard: "@hotels-shard-00-00-vicf6.mongodb.net:27017,hotels-shard-00-01-vicf6.mongodb.net:27017,hotels-shard-00-02-vicf6.mongodb.net:27017/admin?replicaSet=hotels-shard-0"
+  name: "test"
+  pool: 1000
+
+static:
+  host: localhost
+  port: 8080
+  dir: dist
