@@ -9,8 +9,8 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
-// Config is a struct yaml configuration
-type Config struct {
+// Settings is a struct yaml configuration
+type Settings struct {
 	Static
 	DB
 }
@@ -29,7 +29,7 @@ type DB struct {
 }
 
 // Parse reads configuration file and stores values to struct variable
-func Parse(cfgPath string) (cfg *Config, err error) {
+func Parse(cfgPath string) (cfg *Settings, err error) {
 	c, err := ioutil.ReadFile(cfgPath)
 	if err != nil {
 		return nil, errors.Wrapf(err, "failed to read config file %s", cfgPath)
@@ -43,7 +43,7 @@ func Parse(cfgPath string) (cfg *Config, err error) {
 }
 
 // HTTPAddr returns address for HTTP server to listen on
-func (cfg *Config) Addr() string {
+func (cfg *Settings) Addr() string {
 	return fmt.Sprintf("%s:%s", cfg.Host, cfg.Port)
 }
 
