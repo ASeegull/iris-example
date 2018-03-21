@@ -26,10 +26,9 @@ func main() {
 	if err != nil {
 		log.Error(err)
 	}
-	tlsConfig := &tls.Config{InsecureSkipVerify: true}
 
 	dialInfo.DialServer = func(addr *mgo.ServerAddr) (net.Conn, error) {
-		return tls.Dial("tcp", addr.String(), tlsConfig)
+		return tls.Dial("tcp", addr.String(), &tls.Config{InsecureSkipVerify: true})
 	}
 
 	session, err := mgo.DialWithInfo(dialInfo)

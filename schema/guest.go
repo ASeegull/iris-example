@@ -1,10 +1,10 @@
 package schema
 
-// User describes user document in MongoDB
-type User struct {
-	ID        string `bson:"_id"`
-	FirstName string `bson:"first_name"`
-	LastName  string `bson:"last_name"`
-	Email     string `bson:"email"`
-	Phone     string `bson:"phone"`
+// Guest describes user document in MongoDB
+type Guest struct {
+	ID        string `bson:"_id" json:"_id"`
+	FirstName string `bson:"first_name" json:"first_name"`
+	LastName  string `bson:"last_name" json:"last_name"`
+	Email     string `bson:"email" json:"email"`
+	Phone     string `bson:"phone" json:"phone"`
 }
