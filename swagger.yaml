@@ -1,0 +1,26 @@
+  swagger: "2.0"
+  info:
+    description: Example REST API with iris and mongodb
+    version: "1.0.0"
+    title: Elementary
+  basePath: /
+  schemes:
+    - "http"
+  consumes:
+    - "application/json"
+  produces:
+    - "application/json"
+  paths:
+    /{hotel}/listrooms:
+      get:
+        summary: List of rooms in the specified hotel
+        description: Count down the seconds remaining
+        operationId: listrooms
+        responses:
+          200:
+            description: Returns array of rooms in the specified hotel
+            schema:
+              type: guest
+              format: application/json
+          404:
+            description: Thrown when hotel's name specified incorrectly

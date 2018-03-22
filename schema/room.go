@@ -4,7 +4,7 @@ import "gopkg.in/mgo.v2/bson"
 
 // Room describes user document in MongoDB
 type Room struct {
-	ID         bson.ObjectId `bson:"_id" json:"_id"`
+	ID         bson.ObjectId `bson:"_id" json:"id"`
 	Hotel      interface{}   `bson:"hotel" json:"hotel"`
 	RoomNumber int           `bson:"room_number" json:"room_number"`
 	Category   string        `bson:"category" json:"category"`
